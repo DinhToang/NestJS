@@ -4,22 +4,36 @@ npm install @nestjs/core
 npm i -g yarn
 
 
-VS Code extensions
--Docker
--ES6
--javascript and typescript
--Material icon theme
--Prettier
--Prisma
--WSL
+cài đặt thư viện validation
+npm i --save class-validator class-transformer
+
+cài argon2 để mã hóa pass
+yarn add argon2
+
+
+
+-VS Code extensions
++Docker
++ES6
++javascript and typescript
++Material icon theme
++Prettier
++Prisma
++WSL
 
 
 
 
-some command
-docker compose up + tên sv + -d
-yarn start:dev
-npx prisma studio
+-some command
++docker compose up + tên sv + -d
++yarn start:dev
++npx prisma studio
++nest g module prisma: tạo module tên prisma
++nest g service prisma --no-spec: tạo service tên prisma
 
 
--Lưu ý: barrel export pattern
+
+-Lưu ý: 
+barrel export pattern
+dùng pipe để chuyển sang dạng khác VD: ParseIntPipe sẽ chuyển sang dạng int và chỉ nhận giá trị int
+create password hash: bcrypt: limit to 72 firs bit and argon: solve to problem from bcrypt
