@@ -1,0 +1,25 @@
+npm i -g @nestjs/cli
+npm install @nestjs/common
+npm install @nestjs/core
+npm i -g yarn
+
+
+VS Code extensions
+-Docker
+-ES6
+-javascript and typescript
+-Material icon theme
+-Prettier
+-Prisma
+-WSL
+
+
+
+
+some command
+docker compose up + tên sv + -d
+yarn start:dev
+npx prisma studio
+
+
+-Lưu ý: barrel export pattern
