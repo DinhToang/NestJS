@@ -2,10 +2,13 @@ npm i -g @nestjs/cli
 npm install @nestjs/common
 npm install @nestjs/core
 npm i -g yarn
+yarn add -D prisma
+yarn add @prisma/client
 
 
 cài đặt thư viện validation
 npm i --save class-validator class-transformer
+npx prisma init
 
 cài argon2 để mã hóa pass
 yarn add argon2
@@ -30,7 +33,8 @@ yarn add argon2
 +npx prisma studio
 +nest g module prisma: tạo module tên prisma
 +nest g service prisma --no-spec: tạo service tên prisma
-
++npx prisma migrarate dev
++npx prisma generate
 
 
 -Lưu ý: 
