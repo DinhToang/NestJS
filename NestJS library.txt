@@ -31,10 +31,10 @@ yarn add argon2
 +docker compose up + tên sv + -d
 +yarn start:dev
 +npx prisma studio
++npx prisma migrarate dev : tạo db
++npx prisma generate
 +nest g module prisma: tạo module tên prisma
 +nest g service prisma --no-spec: tạo service tên prisma
-+npx prisma migrarate dev
-+npx prisma generate
 
 
 -Lưu ý: 
