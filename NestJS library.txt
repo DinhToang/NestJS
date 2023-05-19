@@ -4,6 +4,8 @@ npm install @nestjs/core
 npm i -g yarn
 yarn add -D prisma
 yarn add @prisma/client
+yarn add @nestjs/config // implliment trong root module
+
 
 
 cài đặt thư viện validation
@@ -25,17 +27,18 @@ yarn add argon2
 +WSL
 
 
-
+dotenv
 
 -some command
 +docker compose up + tên sv + -d
 +yarn start:dev
 +npx prisma studio
-+npx prisma migrarate dev : tạo db
++npx prisma migrate dev : tạo db từ đầu
++npx prisma migrate deploy: áp dụng migraration vào 1 database có sẵn
 +npx prisma generate
 +nest g module prisma: tạo module tên prisma
 +nest g service prisma --no-spec: tạo service tên prisma
-
++sleep is not define in windows 10 and if want to run a script with command sleep in it, need to run in git bash
 
 -Lưu ý: 
 barrel export pattern
