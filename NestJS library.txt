@@ -6,7 +6,8 @@ yarn add -D prisma
 yarn add @prisma/client
 yarn add @nestjs/config // implliment trong root module
 
-
+yarn add @nestjs/passport passport @nestjs/jwt passport-jwt
+yarn add -D @types/passport-jwt
 
 cài đặt thư viện validation
 npm i --save class-validator class-transformer
