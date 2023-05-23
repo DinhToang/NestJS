@@ -3,11 +3,13 @@ import { PrismaService } from "src/prisma/prisma.service";
 import { AuthDto } from "./dto";
 import * as argon from 'argon2';
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime";
-import { async, asyncScheduler } from "rxjs";
+import { JwtService } from "@nestjs/jwt";
+import { ConfigService } from "@nestjs/config";
+import { promises } from "dns";
 
 @Injectable()
 export class AuthService{
-constructor(private prisma: PrismaService) {}
+constructor(private prisma: PrismaService, private jwt: JwtService, private config: ConfigService) {}
     async signup(dto: AuthDto){
         //tạo ra pass mã hóa
         const hash = await argon.hash(dto.password);
@@ -19,10 +21,9 @@ constructor(private prisma: PrismaService) {}
                     hash,
                 },
             })
-            delete user.hash;
     
             //trả lại thông tin được lưu
-            return user;
+            return this.signToken(user.id, user.email)
             
         } catch (error) {
             if (error instanceof PrismaClientKnownRequestError) {
@@ -56,7 +57,28 @@ constructor(private prisma: PrismaService) {}
             );
         }
         //Trả về người dùng
-        delete user.hash;
-        return user;
+    
+        return this.signToken(user.id, user.email)
+    }
+
+
+    async signToken(userID: number, email: string): Promise<{access_token: string}> {
+        const payload = {
+            sub: userID,
+            email,
+        }
+        
+        const secret = this.config.get('JWT_SECRET')
+
+        const token = await this.jwt.signAsync(payload, {
+            expiresIn: '15m',
+            secret: secret
+        })
+
+        return {
+            access_token: token,
+        }
+        
+        
     }
 }

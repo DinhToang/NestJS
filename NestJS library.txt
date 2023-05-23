@@ -39,6 +39,7 @@ dotenv
 +npx prisma generate
 +nest g module prisma: tạo module tên prisma
 +nest g service prisma --no-spec: tạo service tên prisma
++nest g controller user --no-spec: tạo controller
 +sleep is not define in windows 10 and if want to run a script with command sleep in it, need to run in git bash
 
 -Lưu ý: 
