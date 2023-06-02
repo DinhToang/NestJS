@@ -1,3 +1,4 @@
+thư viện nestjs
 npm i -g @nestjs/cli
 npm install @nestjs/common
 npm install @nestjs/core
@@ -6,8 +7,14 @@ yarn add -D prisma
 yarn add @prisma/client
 yarn add @nestjs/config // implliment trong root module
 
+thư viện tạo ra mk hash
 yarn add @nestjs/passport passport @nestjs/jwt passport-jwt
 yarn add -D @types/passport-jwt
+
+
+thư viện testing
+yarn add -D pactum
+
 
 cài đặt thư viện validation
 npm i --save class-validator class-transformer
@@ -46,3 +53,10 @@ dotenv
 barrel export pattern
 dùng pipe để chuyển sang dạng khác VD: ParseIntPipe sẽ chuyển sang dạng int và chỉ nhận giá trị int
 create password hash: bcrypt: limit to 72 firs bit and argon: solve to problem from bcrypt
+
+
+-Testing
+interration testing
+end to end testing
+
+testing library pactum
