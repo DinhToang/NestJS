@@ -53,12 +53,20 @@ dotenv
 +thêm --watch: chạy ở chế độ giám sát
 +thêm --no-cache: để không lỗi bộ nhớ
 
++npx dotenv -e .env.test -- prisma studio: chạy prisma studio ở port khác
+
+
 
 -Lưu ý: 
 barrel export pattern
 dùng pipe để chuyển sang dạng khác VD: ParseIntPipe sẽ chuyển sang dạng int và chỉ nhận giá trị int
 create password hash: bcrypt: limit to 72 firs bit and argon: solve to problem from bcrypt
-
+bỏ "pretest:e2e" : "yarn db:test:restart" : khi chạy câu lệnh test:e2e thì sẽ chạy yarn db:test:restart trước
+onDelete: Cascade: khi xóa bỏ phần tử cha hay là foreign key thì sẽ xóa luôn phần tử con 
+this.$transaction([
+    this.bookmark.deleteMany(),
+    this.user.deleteMany(),
+]): thực thi các câu lệnh theo thứ tự từ trên xuống
 
 -Testing
 interration testing
