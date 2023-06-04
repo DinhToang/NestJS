@@ -23,7 +23,8 @@ npx prisma init
 cài argon2 để mã hóa pass
 yarn add argon2
 
-
+cài đặt thư viện env
+yarn add -D dotenv-cli
 
 -VS Code extensions
 +Docker
@@ -48,6 +49,10 @@ dotenv
 +nest g service prisma --no-spec: tạo service tên prisma
 +nest g controller user --no-spec: tạo controller
 +sleep is not define in windows 10 and if want to run a script with command sleep in it, need to run in git bash
++yarn test:e2e: kiểm tra e2e
++thêm --watch: chạy ở chế độ giám sát
++thêm --no-cache: để không lỗi bộ nhớ
+
 
 -Lưu ý: 
 barrel export pattern
