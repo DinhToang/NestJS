@@ -131,12 +131,13 @@ describe('App e2e', () => {
         return pactum
           .spec()
           .patch('/users')
+          .withBody(dto)
           .withHeaders({
             Authorization: 'Bearer $S{userAt}',
           })
-          .withBody(dto)
           .expectStatus(200)
-  
+          .expectBodyContains(dto.firstName)
+          .expectBodyContains(dto.email)
       });
     });
 
